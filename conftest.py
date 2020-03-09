@@ -5,6 +5,10 @@ from requests import request
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 def get_langs():
     '''Get list of langs'''
@@ -77,3 +81,8 @@ def lang(request):
         
     else:
         return f'--language should by one of {laguages_list}'
+
+@pytest.fixture(scope="function")
+def push_by(request):
+
+    return By

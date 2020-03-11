@@ -26,7 +26,10 @@ class ProductPage(BasePage):
         assert product_price == alert_product_price,\
                 'Product prece is not equal to cart added price'
     
-    def should_be_login_link(self):
-        assert self.is_element_present(
-            *ProductPageLocators.LOGIN_LINK),\
-            "Login link is not presented"
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Success message is presented, but should not be"
+    
+    def should_dissapear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Success message is not dissapeared, but should"

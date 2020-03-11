@@ -4,10 +4,7 @@ import re
 from requests import request
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 def get_langs():
@@ -84,5 +81,8 @@ def lang(request):
 
 @pytest.fixture(scope="function")
 def push_by(request):
-
     return By
+
+@pytest.fixture(scope="function")
+def random_addable_product_link(request):
+    pass

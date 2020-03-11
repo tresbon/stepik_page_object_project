@@ -32,7 +32,11 @@ def pytest_addoption(parser):
 
     parser.addoption('--language', action='store', default='en',
                      help="Choose language")
-
+    
+    parser.addoption('--product_page', action='store',
+                    default='http://selenium1py.pythonanywhere.com/' + \
+                        'en-gb/catalogue/the-city-and-the-stars_95/',
+                     help="Choose_product_link")
 
 @pytest.fixture(scope="function")
 def browser(request):
@@ -84,5 +88,5 @@ def push_by(request):
     return By
 
 @pytest.fixture(scope="function")
-def random_addable_product_link(request):
-    pass
+def product_link(request):
+    return request.config.getoption("product_page")

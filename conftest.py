@@ -5,7 +5,7 @@ from requests import request
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-
+from datetime import datetime
 
 def get_langs():
     '''Get list of langs'''
@@ -68,6 +68,8 @@ def browser(request):
 
     yield browser
 
+    now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    browser.save_screenshot(f'screenshot-{now}.png')
     print("\nquit browser..")
 
     browser.quit()

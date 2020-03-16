@@ -88,7 +88,7 @@ class TestUserAddToBasketFromProductPage():
 
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
 
-    @pytest.fixture(scope="function")
+    @pytest.fixture(scope="function", autouse=True)
     def setup(self):
         page = ProductPage(browser, self.link)
         page.open()

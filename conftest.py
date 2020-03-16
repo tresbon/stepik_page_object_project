@@ -69,7 +69,7 @@ def browser(request):
     yield browser
 
     now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    browser.save_screenshot(f'screenshot-{now}.png')
+    browser.save_screenshot(f'screenshots/screenshot-{now}.png')
     print("\nquit browser..")
 
     browser.quit()
@@ -84,10 +84,6 @@ def lang(request):
         
     else:
         return f'--language should by one of {laguages_list}'
-
-@pytest.fixture(scope="function")
-def push_by(request):
-    return By
 
 @pytest.fixture(scope="function")
 def product_link(request):

@@ -28,5 +28,5 @@ class LoginPage(BasePage):
         pass1_input.send_keys(password)
         pass2_input = self.browser.find_element(*LoginPageLocators.REGISTER_PASS2)
         pass2_input.send_keys(password)
-        button = self.browser.find_element(*LoginPageLocators.REGISTER_PASS2)
+        button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
         button.click()

@@ -47,7 +47,7 @@ def browser(request):
 
     browser = None
 
-    if browser_name == "chrome":
+    if browser_name.lower() == "chrome":
         print("\nstart chrome browser for test..")
         #Подлкючить языковые опции в хром
         options = Options()
@@ -55,7 +55,7 @@ def browser(request):
         browser = webdriver.Chrome()
         browser.maximize_window()
 
-    elif browser_name == "firefox":
+    elif browser_name.lower() == "firefox":
         print("\nstart firefox browser for test..")
         #Подключить языковые опции в Firefox
         fp = webdriver.FirefoxProfile()
